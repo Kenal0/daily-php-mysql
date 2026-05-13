@@ -36,10 +36,12 @@ Task Lifecycle: Управление задачами (создание, ред�
 1. Клонировать репозиторий
    ```bash
    git clone https://github.com/Kenal0/daily-php-mysql
+   ```
 
 2. Установить зависимости
    ```bash
    composer install
+   ```
 
 3. Создать базу данных `myapp` в MySQL
 
@@ -48,6 +50,7 @@ Task Lifecycle: Управление задачами (создание, ред�
    - Терминал:
      ```bash
      mysql -u root -p myapp < database.sql
+     ```
 
 5. Указать свои данные в `config.php`
    'database' => [
