@@ -1,5 +1,5 @@
 # Daily
-Daily — это производительная система управления задачами и записями построенная на базе кастомного PHP-движка с упором на принципы SOLID и чистую архитектуру.
+Daily — это производительная система управления задачами и записями построенная на базе кастомного PHP-движка с упором на принципы SOLID и чистую архитектуру. В нем реализована возможность регистрации профиля, вход в него, привязка заполняемых данных CRUD (речь о notes) к определенному профилю по ID. 
 
 
 Технологический стек:
@@ -42,23 +42,30 @@ Task Lifecycle: Управление задачами (создание, ред�
    ```bash
    composer install
 
-3. Создать базу данных `myapp` в MySQL
+3. Создать базу данных `myapp` в MySQL,
+
+   пример заполнения данных:
+   Name: myapp
+   host/ip: localhost
+   port: 3306
+   user: root
+   password: (пусто)
 
 4. Импортировать структуру таблиц:
-   - phpMyAdmin: Import → выбрать `database.sql`
-   - Терминал:
-     ```bash
-     mysql -u root -p myapp < database.sql
+   tableplus: откройте `myapp` через Ctrl+K → File → Import → From SQL Dump → выбери `database.sql`
+   phpMyAdmin: откройте `myapp` → вкладка Import → выбери `database.sql` → Go
 
-5. Указать свои данные в `config.php`:
+5. Если вы создали данные не по примеру в 3 пункте, укажите свои данные в `config.php`:
+```php
    'database' => [
    
        'host' => 'localhost',
        'port' => 3306,
        'dbname' => 'myapp',
        'charset' => 'utf8mb4'
+       
    ]
-
+```
 6. Запустить локальный сервер из папки public/:
    ```bash
    php -S localhost:8888 -t public
