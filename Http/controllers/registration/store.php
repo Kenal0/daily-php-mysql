@@ -1,4 +1,4 @@
-<?php
+пш<?php
 
 use Core\Validator;
 use Core\App;
@@ -10,7 +10,6 @@ $db = App::resolve(Database::class);
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-// validate the inputs.
 $errors = [];
 
 if (!Validator::email($email)) {
@@ -26,7 +25,6 @@ if (!empty($errors)) {
         'errors' => $errors
     ]);
 }
-
 
 
 $user = $db->query('select * from users where email = :email',
