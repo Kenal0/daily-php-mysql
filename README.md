@@ -53,7 +53,7 @@ Notes Lifecycle: Управление заметками (создание, чт
    - password: (пусто)
 
 4. Импортировать структуру таблиц:
-   - tableplus: откройте `myapp` через Ctrl+K → File → Import → From SQL Dump → выбери `database.sql`
+   - TablePlus: откройте `myapp` через Ctrl+K → File → Import → From SQL Dump → выбери `database.sql`
    - phpMyAdmin: откройте `myapp` → вкладка Import → выбери `database.sql` → Go
 
 5. Если вы создали данные не по примеру в 3 пункте, укажите свои данные в `config.php`:
