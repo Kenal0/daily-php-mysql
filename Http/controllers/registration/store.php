@@ -42,6 +42,11 @@ if ($user) {
         'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
+
+    $user = $db->query('select * from users where email = :email', [
+            'email' => $email
+    ])->find();
+
     (new Authenticator)->login($user);
 
 
