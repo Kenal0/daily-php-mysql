@@ -1,0 +1,5 @@
+vendor/
+/vendor/
+public/playground.php
+.env
+.idea/
