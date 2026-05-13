@@ -37,10 +37,12 @@ Task Lifecycle: Управление задачами (создание, ред�
    ```bash
    git clone https://github.com/Kenal0/daily-php-mysql
    cd daily-php-mysql
+   ```
 
 2. Установить зависимости:
    ```bash
    composer install
+   ```
 
 3. Создать базу данных `myapp` в MySQL,
 
@@ -69,6 +71,7 @@ Task Lifecycle: Управление задачами (создание, ред�
 6. Запустить локальный сервер из папки public/:
    ```bash
    php -S localhost:8888 -t public
+   ```
 
 Почему это в моем портфолио?
 -
