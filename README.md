@@ -33,23 +33,24 @@ Task Lifecycle: Управление задачами (создание, ред�
 Установка
 -
 
-1. Клонировать репозиторий
+1. Клонировать репозиторий и перейти в папку проекта:
    ```bash
    git clone https://github.com/Kenal0/daily-php-mysql
+   cd daily-php-mysql
 
-2. Установить зависимости
+2. Установить зависимости:
    ```bash
    composer install
 
 3. Создать базу данных `myapp` в MySQL
 
-4. Импортировать структуру таблиц
+4. Импортировать структуру таблиц:
    - phpMyAdmin: Import → выбрать `database.sql`
    - Терминал:
      ```bash
      mysql -u root -p myapp < database.sql
 
-5. Указать свои данные в `config.php`
+5. Указать свои данные в `config.php`:
    'database' => [
    
        'host' => 'localhost',
@@ -58,7 +59,7 @@ Task Lifecycle: Управление задачами (создание, ред�
        'charset' => 'utf8mb4'
    ]
 
-6. Запустить локальный сервер из папки public/
+6. Запустить локальный сервер из папки public/:
    ```bash
    php -S localhost:8888 -t public
 
