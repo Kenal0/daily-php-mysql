@@ -3,7 +3,7 @@ Daily — это производительная система управле�
 
 
 Технологический стек:
-
+-
 
 Backend: PHP 8.x.
 
@@ -20,7 +20,7 @@ Testing: Автоматизированное тестирование (Unit & F
 Version Control: Git-workflow.
 
 Ключевые особенности
-
+-
 
 IoC Container: Реализована логика bind и resolve для автоматического внедрения зависимостей (Dependency Injection).
 
@@ -29,6 +29,37 @@ Secure Auth: Система регистрации и авторизации с 
 Clean Routing: Кастомный роутер для обработки запросов и распределения их по контроллерам.
 
 Task Lifecycle: Управление задачами (создание, редактирование, удаление, статусы выполнения).
+
+Установка
+-
+
+1. Клонировать репозиторий
+   ```bash
+   git clone https://github.com/Kenal0/daily-php-mysql
+
+2. Установить зависимости
+   ```bash
+   composer install
+
+3. Создать базу данных `myapp` в MySQL
+
+4. Импортировать структуру таблиц
+   - phpMyAdmin: Import → выбрать `database.sql`
+   - Терминал:
+     ```bash
+     mysql -u root -p myapp < database.sql
+
+5. Указать свои данные в `config.php`
+   'database' => [
+   
+       'host' => 'localhost',
+       'port' => 3306,
+       'dbname' => 'myapp',
+       'charset' => 'utf8mb4'
+   ]
+
+7. Запустить локальный сервер из папки public/
+   php -S localhost:8888 -t public
 
 Почему это в моем портфолио?
 -
