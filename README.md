@@ -33,7 +33,7 @@ Notes Lifecycle: Управление заметками (создание, чт
 Установка
 -
 
-1. Клонировать репозиторий и перейти в папку проекта:
+1. Выберите куда клонировать репозиторий и перейти в папку проекта:
    ```bash
    git clone https://github.com/Kenal0/daily-php-mysql
    cd daily-php-mysql
@@ -44,22 +44,18 @@ Notes Lifecycle: Управление заметками (создание, чт
    composer install
    ```
 
-3. Создать базу данных `myapp` в MySQL,
-   ```
-   пример заполнения данных:
-   Name: myapp
-   host/ip: localhost
-   port: 3306
-   user: root
-   password: (пусто)
-   ```
+3. Создать базу данных `myapp` MySQL, пример заполнения данных:
+
+   - Name: myapp
+   - host/ip: localhost
+   - port: 3306
+   - user: root
+   - password: (пусто)
 
 4. Импортировать структуру таблиц:
-   ```
-   tableplus: откройте `myapp` через Ctrl+K → File → Import → From SQL Dump → выбери `database.sql`
-   phpMyAdmin: откройте `myapp` → вкладка Import → выбери `database.sql` → Go
-   ```
-   
+   - tableplus: откройте `myapp` через Ctrl+K → File → Import → From SQL Dump → выбери `database.sql`
+   - phpMyAdmin: откройте `myapp` → вкладка Import → выбери `database.sql` → Go
+
 5. Если вы создали данные не по примеру в 3 пункте, укажите свои данные в `config.php`:
 ```php
    'database' => [
@@ -71,6 +67,7 @@ Notes Lifecycle: Управление заметками (создание, чт
        
    ]
 ```
+
 6. Запустить локальный сервер из папки public/:
    ```bash
    php -S localhost:8888 -t public
