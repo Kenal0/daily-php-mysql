@@ -45,18 +45,21 @@ Notes Lifecycle: Управление заметками (создание, чт
    ```
 
 3. Создать базу данных `myapp` в MySQL,
-
+   ```
    пример заполнения данных:
    Name: myapp
    host/ip: localhost
    port: 3306
    user: root
    password: (пусто)
+   ```
 
 4. Импортировать структуру таблиц:
+   ```
    tableplus: откройте `myapp` через Ctrl+K → File → Import → From SQL Dump → выбери `database.sql`
    phpMyAdmin: откройте `myapp` → вкладка Import → выбери `database.sql` → Go
-
+   ```
+   
 5. Если вы создали данные не по примеру в 3 пункте, укажите свои данные в `config.php`:
 ```php
    'database' => [
