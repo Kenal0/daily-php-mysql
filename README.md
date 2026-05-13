@@ -44,7 +44,7 @@ Notes Lifecycle: Управление заметками (создание, чт
    composer install
    ```
 
-3. Создать базу данных `myapp` MySQL, пример заполнения данных:
+3. Создать базу данных `myapp` в MySQL, пример заполнения данных:
 
    - Name: myapp
    - host/ip: localhost
