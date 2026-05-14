@@ -33,7 +33,18 @@
                             </div>
                         </div>
 
-                        <div class="bg-gray-50 px-4 py-3 text-right sm:px-6 flex gap-x-4 justify-end">
+                        <div class="bg-gray-50 px-4 py-3 sm:px-6 flex justify-between">
+
+                        <form method="POST" action="/note" >
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="id" value="<?= $note['id'] ?>">
+                            <button type="submit" onclick="return confirm('DELETE NOTE?')"
+                                    class="inline-flex justify-center rounded-md border border-transparent bg-gray-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                Delete
+                            </button>
+                        </form>
+                        <div class="flex gap-x-4">
+
                             <a href = "/notes"
                                 type="submit"
                                 class="inline-flex justify-center rounded-md border border-transparent bg-gray-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -46,6 +57,7 @@
                             >
                                 Update
                             </button>
+                        </div>
                         </div>
                     </div>
                 </form>
