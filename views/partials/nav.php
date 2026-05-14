@@ -34,7 +34,7 @@
                             <button type="button" class="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
                                 <a href="/profile">
-                                <img class="h-8 w-8 rounded-full" src="/images/profile1.avif" alt="Profile picture">
+                                <img class="h-8 w-8 rounded-full" src="<?= $_SESSION['user']['avatar'] ?? '/images/default.png' ?>" alt="Profile picture">
                                 </a>
                                 </button>
                             <?php else : ?>
