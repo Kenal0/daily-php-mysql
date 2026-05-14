@@ -16,7 +16,7 @@
 
         <p class="mt-8">
             <a href="/notes/create"
-               class="rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-smg font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+               class="rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                 Create Note</a>
         </p>
     </div>
