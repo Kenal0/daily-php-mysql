@@ -13,5 +13,7 @@ $db->query('UPDATE users SET name = :name WHERE id = :id', [
     ':id' => $currentUserId
 ]);
 
+$_SESSION['user']['name'] = $name;
+
 header('location: /');
 exit();
