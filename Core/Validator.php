@@ -15,7 +15,7 @@ class Validator
         return filter_var($value, FILTER_VALIDATE_EMAIL);
     }
 
-    public static function name($name, $min = 1, $max = 35)
+    public static function name($name, $min = 2, $max = 35)
     {
         $name = trim($name);
 
