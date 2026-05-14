@@ -22,15 +22,15 @@ if (!Validator::string($password, 7, 255)) {
 
 if (!empty($errors)) {
     return view('registration/create.view.php', [
-        'errors' => $errors
+            'errors' => $errors
     ]);
 }
 
 
 $user = $db->query('select * from users where email = :email',
-    [
-        'email' => $email
-    ])->find();
+        [
+                'email' => $email
+        ])->find();
 
 
 if ($user) {
@@ -38,8 +38,8 @@ if ($user) {
     exit();
 } else {
     $db->query('INSERT INTO users(email,password) VALUES(:email, :password)', [
-        'email' => $email,
-        'password' => password_hash($password, PASSWORD_BCRYPT)
+            'email' => $email,
+            'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
 

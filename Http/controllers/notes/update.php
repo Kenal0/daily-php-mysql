@@ -23,7 +23,7 @@ if (count($errors)) {
         'heading' => 'Edit Note',
         'errors' => $errors,
         'note' => $note
-        ]);
+    ]);
 
 }
 

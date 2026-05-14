@@ -1,6 +1,7 @@
 <?php
 
 use Core\Response;
+
 function dd($value)
 {
     echo "<pre>";
@@ -26,7 +27,7 @@ function abort($code = 404)
 
 function authorize($condition, $status = Response::FORBIDDEN)
 {
-    if (! $condition) {
+    if (!$condition) {
         abort($status);
     }
 }
@@ -51,5 +52,5 @@ function redirect($path)
 
 function old($key, $default = "")
 {
-        return Core\Session::get('old')[$key] ?? $default;
+    return Core\Session::get('old')[$key] ?? $default;
 }
