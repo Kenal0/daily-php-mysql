@@ -6,7 +6,11 @@
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="mt-5 md:col-span-2 md:mt-0">
-                <form method="POST" action="/note">
+                <form method="POST" action="/note" id="delete-form">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="id" value="<?= $note['id'] ?>">
+                </form>
+                <form method="POST" action="/note" id="">
                     <input type="hidden" name="_method" value="PATCH"">
                     <input type="hidden" name="id" value="<?= $note['id'] ?>">
                     <div class="shadow sm:overflow-hidden sm:rounded-md">
@@ -34,15 +38,11 @@
                         </div>
 
                         <div class="bg-gray-50 px-4 py-3 sm:px-6 flex justify-between">
-
-                        <form method="POST" action="/note" >
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="id" value="<?= $note['id'] ?>">
-                            <button type="submit" onclick="return confirm('DELETE NOTE?')"
+                            <button type="submit" form="delete-form" onclick="return confirm('DELETE NOTE?')"
                                     class="inline-flex justify-center rounded-md border border-transparent bg-gray-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                                 Delete
                             </button>
-                        </form>
+
                         <div class="flex gap-x-4">
 
                             <a href = "/notes"
