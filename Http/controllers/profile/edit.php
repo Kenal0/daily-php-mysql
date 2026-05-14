@@ -29,6 +29,17 @@ $_SESSION['user']['name'] = $name;
 
 
 if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === 0) {
+
+    if (!empty($_SESSION['user']['avatar']))
+    {
+       $oldFiles = glob(base_path('public/images/avatar_' . $currentUserId . '*'));
+
+       foreach ($oldFiles as $oldFile) {
+           if (file_exists($oldFile))
+         unlink($oldFile);
+    }
+    }
+
     $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
     $filename = 'avatar_' . $currentUserId . '.' . $extension;
 
