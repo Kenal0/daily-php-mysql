@@ -41,8 +41,8 @@
                                name="name"
                                value="<?= htmlspecialchars($_SESSION['user']['name'] ?? '') ?>"
                                class="w-full rounded-md border border-gray-300 py-2 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <?php if  (isset($errors['body'])) : ?>
-                            <p class="text-red-500 text-xs mt-2"><?= $errors['body'] ?></p>
+                        <?php if  (isset($errors['name'])) : ?>
+                            <p class="text-red-500 text-xs mt-2"><?= $errors['name'] ?></p>
                         <?php endif; ?>
                     </div>
 

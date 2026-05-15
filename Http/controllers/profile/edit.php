@@ -2,51 +2,27 @@
 
 use Core\App;
 use Core\Database;
-use Core\Validator;
+use Core\Validation\ProfileValidator;
+use Core\Services\AvatarService;
 
-$name = $_POST['name'];
+$name = trim($_POST['name']);
 $currentUserId = $_SESSION['user']['id'];
 $db = App::resolve(Database::class);
-$errors = [];
 
-if (!Validator::name($name, $min = 2, $max = 35)) {
-    $errors['body'] = "Имя должно быть больше {$min} и меньше {$max} символов, а так же содержать только буквы";
-}
-
-$fileValidation = Validator::file($_FILES['avatar']);
-$avatarPath = $_SESSION['user']['avatar'] ?? null;
+$avatarFile = ($_FILES['avatar']);
 $newFileUploaded = !empty($_FILES['avatar']['name']);
 
-if ($newFileUploaded) {
- if (!$fileValidation) {
-     $errors['errorAvatar'] = 'Слишком большой файл или неподходящее расширение';
-    } else {
-     if (!empty($_SESSION['user']['avatar'])) {
-         $oldFiles = glob(base_path('public/images/avatar_' . $currentUserId . '*'));
+$validator = new ProfileValidator();
+    if(!$validator->validate($name, $avatarFile)) {
+        return view('/profile/profile.view.php', [
+            'heading' => 'Profile',
+            'errors' => $validator->getErrors()
+        ]);
+    }
 
-         foreach ($oldFiles as $oldFile) {
-             if (file_exists($oldFile))
-                 unlink($oldFile);
-         }
-     }
-
-     $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-     $filename = 'avatar_' . $currentUserId . '.' . $extension;
-     move_uploaded_file($_FILES['avatar']['tmp_name'], base_path('public/images/' . $filename));
-
-     $avatarPath = '/images/' . $filename;
- }
-}
-
-
-
-if (!empty($errors)) {
-    return view("profile/profile.view.php", [
-        'heading' => 'Profile',
-        'errors' => $errors
-    ]);
-}
-
+$avatarPath = $newFileUploaded
+    ? AvatarService::store($avatarFile, $currentUserId)
+    : $_SESSION['user']['avatar'];
 
 $db->query('UPDATE users SET name = :name, avatar = :avatar WHERE id = :id', [
     'name' => $name,
