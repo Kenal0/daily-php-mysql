@@ -18,7 +18,7 @@ class AvatarService
         $filename = 'avatar_' . $userId . '.' . $extension;
         $destination = base_path('public/images/' . $filename);
 
-        if (!move_uploaded_file($file['tmp_name'],$destination))
+        if (!move_uploaded_file($file['tmp_name'], $destination))
         {
             throw new \Exception("Could not move uploaded file.");
         }
