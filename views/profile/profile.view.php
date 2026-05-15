@@ -2,7 +2,6 @@
 <?php require base_path('views/partials/nav.php') ?>
 <?php require base_path('views/partials/banner.php') ?>
 
-
     <main>
         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             <div class="bg-white shadow rounded-lg p-6">
@@ -30,6 +29,9 @@
 
                         <h2 class="text-xl font-semibold"><?= htmlspecialchars($_SESSION['user']['email']) ?></h2>
                 </div>
+                    <?php if (isset($errors['errorAvatar'])) : ?>
+                        <p class="text-red-500"><?= $errors['errorAvatar']?></p>
+                    <?php endif; ?>
 
                 <hr class="mb-6">
 

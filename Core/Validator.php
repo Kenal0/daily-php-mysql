@@ -19,9 +19,28 @@ class Validator
     {
         $name = trim($name);
 
-        if (strlen($name) < $min || strlen($name) > $max)
+        $length = mb_strlen($name);
+        if ($length < $min || $length > $max)
             return false;
 
         return (bool) preg_match('/^[a-zA-Zа-яА-ЯёЁ\s]+$/u', $name);
+    }
+    public static function file($file, $maxSize = 2097152, $allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'])
+    {
+        if ($file['error'] === UPLOAD_ERR_NO_FILE)
+        return true;
+
+        if ($file['error'] !== UPLOAD_ERR_OK)
+            return false;
+
+        if ($file['size'] > $maxSize)
+            return false;
+
+        $realType = mime_content_type($file['tmp_name']);
+
+        if (!in_array($realType, $allowedTypes))
+            return false;
+
+        return true;
     }
 }

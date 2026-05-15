@@ -1,4 +1,4 @@
-пш<?php
+<?php
 
 use Core\Validator;
 use Core\App;
