@@ -17,8 +17,6 @@ Dependency Management: Самописный IoC Container для гибкого 
 
 Security: Безопасное хеширование паролей с использованием алгоритма bcrypt.
 
-Testing: Автоматизированное тестирование (Unit & Feature) с использованием Pest/PHPUnit (в процессе добавления).
-
 Version Control: Git-workflow.
 
 Ключевые особенности
